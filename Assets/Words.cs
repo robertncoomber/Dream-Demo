@@ -30,8 +30,15 @@ public class Words : MonoBehaviour
 };
 
    private void Awake() {
+    Randomize();
+    InvokeRepeating("Randomize", 0, 10);
+  }
+
+   private void Randomize()
+    {
     var text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
     text.text = afterlifeAnswers[Random.Range(0, afterlifeAnswers.Length)];
-    text.fontSize = 0.06f;
-   }
+    text.fontSize = 0.07f;
+ 
+    }
 }
